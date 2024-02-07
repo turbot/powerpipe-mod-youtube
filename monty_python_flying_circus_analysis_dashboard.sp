@@ -29,32 +29,6 @@ dashboard "monty_python_series_analysis_dashboard" {
 
   container {
 
-    title = "Series and Episode Analysis"
-
-    chart {
-      title = "Episodes by Series"
-      query = query.episodes_by_series
-      type  = "bar"
-      width = 4
-    }
-
-    chart {
-      title = "Number of Segments per Episode"
-      query = query.segments_per_episode
-      type  = "bar"
-      width = 4
-    }
-
-    chart {
-      title = "Episode Frequency by Transmission Date"
-      query = query.episode_frequency_by_transmission_date
-      type  = "line"
-      width = 4
-    }
-  }
-
-  container {
-
     title = "Content and Script Insights"
 
     chart {
@@ -77,6 +51,33 @@ dashboard "monty_python_series_analysis_dashboard" {
       type  = "pie"
       width = 4
     }
+  }
+
+  container {
+
+    title = "Series and Episode Analysis"
+
+    chart {
+      title = "Number of Segments per Episode"
+      query = query.segments_per_episode
+      type  = "bar"
+      width = 6
+    }
+
+    chart {
+      title = "Episode Frequency by Transmission Date"
+      query = query.episode_frequency_by_transmission_date
+      type  = "line"
+      width = 6
+    }
+
+    chart {
+      title = "Episodes by Series"
+      query = query.episodes_by_series
+      type  = "bar"
+      width = 12
+    }
+
   }
 
   container {
@@ -104,7 +105,7 @@ dashboard "monty_python_series_analysis_dashboard" {
 query "total_episodes" {
   sql = <<-EOQ
     select
-      count(distinct episode) as total_episodes
+      count(distinct episode) as "Total Episodes"
     from
       scripts;
   EOQ
@@ -113,7 +114,7 @@ query "total_episodes" {
 query "total_segments" {
   sql = <<-EOQ
     select
-      count(distinct segment) as total_segments
+      count(distinct segment) as "Total Segments"
     from
       scripts;
   EOQ
@@ -122,7 +123,7 @@ query "total_segments" {
 query "unique_characters" {
   sql = <<-EOQ
     select
-      count(distinct character) as unique_characters
+      count(distinct character) as "Unique Characters"
     from
       scripts;
   EOQ
@@ -131,7 +132,7 @@ query "unique_characters" {
 query "total_actors_participated" {
   sql = <<-EOQ
     select
-      count(distinct actor) as total_actors_participated
+      count(distinct actor) as "Total Actors Participated"
     from
       scripts;
   EOQ
@@ -141,22 +142,22 @@ query "total_actors_participated" {
 
 query "episodes_by_series" {
   sql = <<-EOQ
-    select 
+    select
       series,
       count(distinct episode) as episode_count
     from
       scripts
-    group by 
+    group by
       series;
   EOQ
 }
 
 query "segments_per_episode" {
-  sql = <<-EOQ 
+  sql = <<-EOQ
     select
       episode,
       count(distinct segment) as segment_count
-    from 
+    from
       scripts
     group by
       episode;
@@ -164,23 +165,23 @@ query "segments_per_episode" {
 }
 
 query "episode_frequency_by_transmission_date" {
-  sql = <<-EOQ 
-    select 
+  sql = <<-EOQ
+    select
       date(transmission_date) as transmission_date,
       count(distinct episode) as episode_count
-    from 
+    from
       scripts
-    group by 
+    group by
       transmission_date;
-  EOQ 
+  EOQ
 }
 
 query "most_frequent_characters" {
-  sql = <<-EOQ 
+  sql = <<-EOQ
     select
       character,
       count(*) as character_count
-    from 
+    from
       scripts
     group by
       character
@@ -204,19 +205,21 @@ query "most_active_actors" {
 }
 
 query "segment_types_distribution" {
-  sql = <<-EOQ 
+  sql = <<-EOQ
     select
       type,
       count(*) as type_count
     from
       scripts
-    group by 
-      type;
+    group by
+      type
+    having
+      type is not null;
   EOQ
 }
 
 query "episodes_over_time" {
-  sql = <<-EOQ 
+  sql = <<-EOQ
     select
       date(record_date) as record_date,
       count(distinct episode) as episode_count
@@ -228,7 +231,7 @@ query "episodes_over_time" {
 }
 
 query "actor_participation_over_time" {
-  sql = <<-EOQ 
+  sql = <<-EOQ
     select
       date(record_date) as record_date,
       count(distinct actor) as actor_count
