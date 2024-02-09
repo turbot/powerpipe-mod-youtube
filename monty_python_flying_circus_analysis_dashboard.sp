@@ -74,7 +74,7 @@ dashboard "monty_python_series_analysis_dashboard" {
     chart {
       title = "Episodes by Series"
       query = query.episodes_by_series
-      type  = "bar"
+      type  = "column"
       width = 12
     }
 
