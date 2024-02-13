@@ -15,17 +15,16 @@ brew install turbot/tap/postgresql
 
 Download the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
 
-## Create a PostgreSQL Database.
+## Create a PostgreSQL Database
 
-Replace `username` with your PostgreSQL username.
-Replace `mydatabase` with your desired database name.
+Replace `username` with your PostgreSQL username and `mydatabase` with your desired database name.
 
 ```sh
 psql -U username -d postgres
 CREATE DATABASE mydatabase;
 ```
 
-## Connect to the database
+## Connect to the Database
 
 ```sh
 \c mydatabase
@@ -66,7 +65,7 @@ CREATE TABLE YouTubeStatistics (
 );
 ```
 
-## Load the dataset into the Table
+## Load the Dataset into the Table
 
 ```sh
 COPY YouTubeStatistics(rank, Youtuber, subscribers, video_views, category, Title, uploads, Country, Abbreviation, channel_type, video_views_rank, country_rank, channel_type_rank, video_views_for_the_last_30_days, lowest_monthly_earnings, highest_monthly_earnings, lowest_yearly_earnings, highest_yearly_earnings, subscribers_for_last_30_days, created_year, created_month, created_date, Gross_tertiary_education_enrollment_percent, Population, Unemployment_rate, Urban_population, Latitude, Longitude)
