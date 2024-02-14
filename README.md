@@ -4,7 +4,7 @@ Analyze youtube channel statistics data using Postgres and PowerPipe.
 
 ![youtuber-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/d1e7a0dd-0222-4032-bc24-ec614dfbc41d)
 
-![youtube-statistics-detail-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/0b3af586-cc1f-4917-bc86-7130db28ad46)
+![youtuber-analysis-detail-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/0b3af586-cc1f-4917-bc86-7130db28ad46)
 
 ## Installation
 
