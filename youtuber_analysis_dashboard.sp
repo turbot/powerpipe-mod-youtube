@@ -12,9 +12,9 @@ dashboard "youtube_statistics_dashboard" {
       type  = "info"
     }
 
-    # Card: Average Uploads per Channel
+    # Card: Total Uploads of a Channel
     card {
-      query = query.average_uploads_per_channel
+      query = query.total_uploads_per_channel
       width = 3
       type  = "info"
     }
@@ -151,16 +151,16 @@ query "total_channels" {
     select
       count(*) as "Total Channels"
     from
-      YouTubeStatistics;
+      youtube_statistics;
   EOQ
 }
 
 query "total_youtubers" {
   sql = <<-EOQ
     select
-      count(distinct Youtuber) as "Total YouTubers"
+      count(distinct youtuber) as "Total YouTubers"
     from
-      YouTubeStatistics;
+      youtube_statistics;
   EOQ
 }
 
@@ -169,7 +169,7 @@ query "total_categories" {
     select
       count(distinct category) as "Total Categories"
     from
-      YouTubeStatistics;
+      youtube_statistics;
   EOQ
 }
 
@@ -178,26 +178,26 @@ query "total_countries" {
     select
       count(distinct country) as "Total Countries"
     from
-      YouTubeStatistics;
+      youtube_statistics;
   EOQ
 }
 
-query "average_uploads_per_channel" {
+query "total_uploads_per_channel" {
   sql = <<-EOQ
     select
       sum(uploads) as "Total Uploads"
     from
-      YouTubeStatistics;
+      youtube_statistics;
   EOQ
 }
 
 query "top_10_channels_by_subscribers" {
   sql = <<-EOQ
     select
-      Youtuber,
+      youtuber,
       subscribers
     from
-      YouTubeStatistics
+      youtube_statistics
     order by
       subscribers DESC
     limit 10;
@@ -207,11 +207,11 @@ query "top_10_channels_by_subscribers" {
 query "video_view_vs_uploads" {
   sql = <<-EOQ
     select
-      Youtuber,
+      youtuber,
       video_views,
       uploads
     from
-      YouTubeStatistics
+      youtube_statistics
     order by
       subscribers DESC
     limit 10;
@@ -225,7 +225,7 @@ query "subscriber_vs_video_view_by_category" {
       sum(subscribers) as TotalSubscribers,
       sum(video_views) as TotalVideoViews
     from
-      YouTubeStatistics
+      youtube_statistics
     group by
       category;
   EOQ
@@ -237,7 +237,7 @@ query "distribution_of_channel_types" {
       channel_type,
       count(*) as NumberOfChannels
     from
-      YouTubeStatistics
+      youtube_statistics
     group by
       channel_type
     order by
@@ -251,7 +251,7 @@ query "distribution_channels_by_country" {
       country,
       count(*) as NumberOfChannels
     from
-      YouTubeStatistics
+      youtube_statistics
     group by
       country
     order by
@@ -262,11 +262,11 @@ query "distribution_channels_by_country" {
 query "distribution_of_earnings" {
   sql = <<-EOQ
     select
-      Youtuber,
+      youtuber,
       highest_monthly_earnings,
       highest_yearly_earnings
     from
-      YouTubeStatistics
+      youtube_statistics
     order by
       highest_monthly_earnings DESC
     limit 10;
@@ -276,23 +276,23 @@ query "distribution_of_earnings" {
 query "channels_subscriber_growth_last_30_days" {
   sql = <<-EOQ
     select
-      Youtuber,
+      youtuber,
       subscribers_for_last_30_days as "Subscriber Growth (Last 30 Days)"
     from
-      YouTubeStatistics
+      youtube_statistics
     order by
-      Youtuber;
+      youtuber;
   EOQ
 }
 
 query "channels_view_growth_last_30_days" {
   sql = <<-EOQ
     select
-      Youtuber,
+      youtuber,
       video_views_for_the_last_30_days as "View Growth (Last 30 Days)"
     from
-      YouTubeStatistics
+      youtube_statistics
     order by
-      Youtuber;
+      youtuber;
   EOQ
 }
