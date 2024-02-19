@@ -15,7 +15,7 @@ brew install turbot/tap/postgresql
 
 ## Get the Dataset
 
-Download the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
+Log in to Kaggle,download the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
 
 ## Create a PostgreSQL Database
 
