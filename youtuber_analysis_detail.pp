@@ -102,7 +102,7 @@ query "youtube_statistics_input" {
 query "youtube_channel_uploads" {
   sql = <<-EOQ
     select
-      'Uploads' as label,
+      'Total Uploads' as label,
       uploads as value
     from
       youtube_statistics
@@ -114,7 +114,7 @@ query "youtube_channel_uploads" {
 query "youtube_channel_subscribers" {
   sql = <<-EOQ
     select
-      'Subscribers' as label,
+      'Total Subscribers' as label,
       subscribers as value
     from
       youtube_statistics
@@ -126,7 +126,7 @@ query "youtube_channel_subscribers" {
 query "youtube_channel_video_views" {
   sql = <<-EOQ
     select
-      'Video Views' as label,
+      'Total Video Views' as label,
       video_views as value
     from
       youtube_statistics
