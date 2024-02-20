@@ -14,36 +14,42 @@ dashboard "youtube_statistics_detail" {
       query = query.youtube_channel_type
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
 
     card {
       query = query.youtube_video_view_rank
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
 
     card {
       query = query.youtube_channel_uploads
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
 
     card {
       query = query.youtube_channel_subscribers
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
 
     card {
       query = query.youtube_channel_video_views
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
 
     card {
       query = query.youtube_channel_rank
       width = 2
       args  = [self.input.youtuber_id.value]
+      type  = "info"
     }
   }
 
@@ -164,6 +170,7 @@ query "youtube_video_view_rank" {
       rank = $1;
   EOQ
 }
+
 # Overview table query
 
 query "youtube_channel_overview" {
@@ -185,6 +192,7 @@ query "youtube_channel_overview" {
       rank = $1;
   EOQ
 }
+
 # Additional queries
 
 query "youtube_channel_monthly_earnings_distribution" {
