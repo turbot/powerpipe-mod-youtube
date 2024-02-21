@@ -13,6 +13,13 @@ brew install turbot/tap/powerpipe
 brew install turbot/tap/postgresql
 ```
 
+## Clone the Mod Repository
+
+```sh
+git clone https://github.com/turbot/powerpipe-mod-youtuber.git
+cd powerpipe-mod-youtuber
+```
+
 ## Install the Dataset
 
 - Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
@@ -83,13 +90,6 @@ create table youtube_statistics (
 ```sh
 copy youtube_statistics(rank, youtuber, subscribers, video_views, category, title, uploads, country, abbreviation, channel_type, video_views_rank, country_rank, channel_type_rank, video_views_for_the_last_30_days, lowest_monthly_earnings, highest_monthly_earnings, lowest_yearly_earnings, highest_yearly_earnings, subscribers_for_last_30_days, created_year, created_month, created_date, gross_tertiary_education_enrollment_percent, population, unemployment_rate, urban_population, latitude, longitude)
 from '/path/to/your/file/Global YouTube Statistics.csv' delimeter ',' csv header encoding 'ISO-8859-1';
-```
-
-## Clone the Mod Repository
-
-```sh
-git clone https://github.com/turbot/powerpipe-mod-youtuber.git
-cd powerpipe-mod-youtuber
 ```
 
 ## Usage
