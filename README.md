@@ -26,15 +26,6 @@ cd powerpipe-mod-youtuber
 
 - Click on `Download` (Free signup to Kaggle is required).
 
-- Unzip the Downloaded File:
-
-  - For Mac/Linux:
-    - Use the command `unzip ~/Downloads/archive.zip` to extract the file.
-
-  - For Windows:
-    - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
-    - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
-
 ## Create a PostgreSQL Database
 
 Replace `username` with your PostgreSQL username and `mydatabase` with your desired database name.
@@ -89,7 +80,7 @@ create table youtube_statistics (
 
 ```sh
 copy youtube_statistics(rank, youtuber, subscribers, video_views, category, title, uploads, country, abbreviation, channel_type, video_views_rank, country_rank, channel_type_rank, video_views_for_the_last_30_days, lowest_monthly_earnings, highest_monthly_earnings, lowest_yearly_earnings, highest_yearly_earnings, subscribers_for_last_30_days, created_year, created_month, created_date, gross_tertiary_education_enrollment_percent, population, unemployment_rate, urban_population, latitude, longitude)
-from '/path/to/your/file/Global YouTube Statistics.csv' delimeter ',' csv header encoding 'ISO-8859-1';
+from '/path/to/your/file/Global YouTube Statistics.csv' DELIMETER ',' CSV HEADER ENCODING 'ISO-8859-1';
 ```
 
 ## Usage
