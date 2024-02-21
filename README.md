@@ -4,7 +4,20 @@ Analyze youtube channel statistics data using Postgres and PowerPipe.
 
 ![youtuber-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/d1e7a0dd-0222-4032-bc24-ec614dfbc41d)
 
-## Installation
+## Install the Dataset
+
+- Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
+
+- Click on `Download` (Free signup to Kaggle is required).
+
+- Unzip the Downloaded File:
+
+  - For Mac/Linux:
+    - Use the command `unzip ~/Downloads/archive.zip` to extract the file.
+
+  - For Windows:
+    - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
+    - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
 
 Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (https://www.postgresql.org/download/). Or use Brew:
 
@@ -12,10 +25,6 @@ Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (
 brew install turbot/tap/powerpipe
 brew install turbot/tap/postgresql
 ```
-
-## Get the Dataset
-
-Log in to Kaggle,download the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
 
 ## Create a PostgreSQL Database
 
@@ -83,7 +92,7 @@ cd powerpipe-mod-youtuber
 
 ## Usage
 
-Run the dashboard and specify the DB connection string:
+Run the dashboard and specify the DB connection string (replace `username` with your PostgreSQL username and `mydatabase` with your desired database name) :
 
 ```sh
 powerpipe server --database postgres://username@localhost:5432/mydatabase
