@@ -4,6 +4,15 @@ Analyze youtube channel statistics data using Postgres and PowerPipe.
 
 ![youtuber-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/d1e7a0dd-0222-4032-bc24-ec614dfbc41d)
 
+## Installation
+
+Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (https://www.postgresql.org/download/). Or use Brew:
+
+```sh
+brew install turbot/tap/powerpipe
+brew install turbot/tap/postgresql
+```
+
 ## Install the Dataset
 
 - Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
@@ -18,13 +27,6 @@ Analyze youtube channel statistics data using Postgres and PowerPipe.
   - For Windows:
     - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
     - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
-
-Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (https://www.postgresql.org/download/). Or use Brew:
-
-```sh
-brew install turbot/tap/powerpipe
-brew install turbot/tap/postgresql
-```
 
 ## Create a PostgreSQL Database
 
