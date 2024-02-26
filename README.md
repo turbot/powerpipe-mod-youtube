@@ -4,7 +4,9 @@ Analyze youtube channel statistics data using PostgreSQL and PowerPipe.
 
 ![youtuber-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-youtuber/assets/72413708/d1e7a0dd-0222-4032-bc24-ec614dfbc41d)
 
-## Installation
+## Getting Started
+
+### Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (https://www.postgresql.org/download/). Or use Brew:
 
@@ -13,20 +15,20 @@ brew install turbot/tap/powerpipe
 brew install turbot/tap/postgresql
 ```
 
-## Clone the Mod Repository
+Clone:
 
 ```sh
 git clone https://github.com/turbot/powerpipe-mod-youtuber.git
 cd powerpipe-mod-youtuber
 ```
 
-## Install the Dataset
+Download the dataset:
 
-- Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input).
+- Signup to [Kaggle](https://www.kaggle.com/account/login?phase=startRegisterTab&returnUrl=%2Fdatasets) 
+- Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input)
+- Click on `Download`
 
-- Click on `Download` (Free signup to Kaggle is required).
-
-## Create a PostgreSQL Database
+Create a PostgreSQL database:
 
 Replace `username` with your PostgreSQL username and `mydatabase` with your desired database name.
 
@@ -35,13 +37,13 @@ psql -U username -d postgres
 create database mydatabase;
 ```
 
-## Connect to the Database
+Connect to the database:
 
 ```sh
 \c mydatabase
 ```
 
-## Create a Table
+Create a table:
 
 ```sh
 create table youtube_statistics (
@@ -76,7 +78,7 @@ create table youtube_statistics (
 );
 ```
 
-## Load the Dataset into the Table
+Load the dataset into the table:
 
 ```sh
 copy youtube_statistics(rank, youtuber, subscribers, video_views, category, title, uploads, country, abbreviation, channel_type, video_views_rank, country_rank, channel_type_rank, video_views_for_the_last_30_days, lowest_monthly_earnings, highest_monthly_earnings, lowest_yearly_earnings, highest_yearly_earnings, subscribers_for_last_30_days, created_year, created_month, created_date, gross_tertiary_education_enrollment_percent, population, unemployment_rate, urban_population, latitude, longitude)
@@ -85,7 +87,7 @@ from '/path/to/your/file/Global YouTube Statistics.csv' DELIMITER ',' CSV HEADER
 
 ## Usage
 
-Run the dashboard and specify the DB connection string (replace `username` with your PostgreSQL username and `mydatabase` with your desired database name) :
+Run the dashboard and specify the DB connection string (replace `username` with your PostgreSQL username and `mydatabase` with your desired database name):
 
 ```sh
 powerpipe server --database postgres://username@localhost:5432/mydatabase
