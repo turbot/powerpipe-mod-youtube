@@ -22,25 +22,23 @@ git clone https://github.com/turbot/powerpipe-mod-youtuber.git
 cd powerpipe-mod-youtuber
 ```
 
+### Setup Data
+
 Download the dataset:
 
-- Signup to [Kaggle](https://www.kaggle.com/account/login?phase=startRegisterTab&returnUrl=%2Fdatasets) 
-- Visit the [Global YouTube Statistics](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input)
-- Click on `Download`
-
+- Download the [Global YouTube Statistics dataset](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics) (requires signup with [Kaggle](https://www.kaggle.com/))
+  
 Create a PostgreSQL database:
 
-Replace `username` with your PostgreSQL username and `mydatabase` with your desired database name.
-
 ```sh
-psql -U username -d postgres
-create database mydatabase;
+psql -U <username> -d postgres
+create database youtube;
 ```
 
 Connect to the database:
 
 ```sh
-\c mydatabase
+\c youtube
 ```
 
 Create a table:
@@ -87,10 +85,10 @@ from '/path/to/your/file/Global YouTube Statistics.csv' DELIMITER ',' CSV HEADER
 
 ## Usage
 
-Run the dashboard and specify the DB connection string (replace `username` with your PostgreSQL username and `mydatabase` with your desired database name):
+Run the dashboard and specify the DB connection string:
 
 ```sh
-powerpipe server --database postgres://username@localhost:5432/mydatabase
+powerpipe server --database postgres://<username>@localhost:5432/youtube
 ```
 
 ## Open Source & Contributing
