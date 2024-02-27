@@ -22,22 +22,19 @@ git clone https://github.com/turbot/powerpipe-mod-youtuber.git
 cd powerpipe-mod-youtuber
 ```
 
-### Setup Data
+### Configure Database
 
-Download the dataset:
-
-- Download the [Global YouTube Statistics dataset](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics) (requires signup with [Kaggle](https://www.kaggle.com/))
+Download [Global YouTube Statistics.csv](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input)
   
-Create a PostgreSQL database:
+Connect to PostgreSQL:
 
 ```sh
 psql -U <username> -d postgres
-create database youtube;
 ```
 
-Connect to the database:
-
+Create and connect to a database:
 ```sh
+create database youtube;
 \c youtube
 ```
 
@@ -76,7 +73,7 @@ create table youtube_statistics (
 );
 ```
 
-Load the dataset into the table:
+Load the dataset into the table (update `/path/to/your/file/Global YouTube Statistics.csv`):
 
 ```sh
 copy youtube_statistics(rank, youtuber, subscribers, video_views, category, title, uploads, country, abbreviation, channel_type, video_views_rank, country_rank, channel_type_rank, video_views_for_the_last_30_days, lowest_monthly_earnings, highest_monthly_earnings, lowest_yearly_earnings, highest_yearly_earnings, subscribers_for_last_30_days, created_year, created_month, created_date, gross_tertiary_education_enrollment_percent, population, unemployment_rate, urban_population, latitude, longitude)
