@@ -3,7 +3,7 @@ dashboard "youtube_statistics_detail" {
   title         = "YouTube Channel Detail"
   documentation = file("./docs/youtube_channel_detail.md")
 
-  input "youtuber_id" {
+  input "youtube_id" {
     title = "Select a Channel:"
     query = query.youtube_statistics_input
     width = 4
@@ -15,42 +15,42 @@ dashboard "youtube_statistics_detail" {
     card {
       query = query.youtube_channel_type
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
 
     card {
       query = query.youtube_video_view_rank
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
 
     card {
       query = query.youtube_channel_uploads
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
 
     card {
       query = query.youtube_channel_subscribers
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
 
     card {
       query = query.youtube_channel_video_views
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
 
     card {
       query = query.youtube_channel_rank
       width = 2
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
       type  = "info"
     }
   }
@@ -63,7 +63,7 @@ dashboard "youtube_statistics_detail" {
       width = 4
       type  = "line"
       query = query.youtube_channel_overview
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
     }
 
     chart {
@@ -71,7 +71,7 @@ dashboard "youtube_statistics_detail" {
       width = 4
       type  = "column"
       query = query.youtube_channel_monthly_earnings_distribution
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
     }
 
     chart {
@@ -79,7 +79,7 @@ dashboard "youtube_statistics_detail" {
       width = 4
       type  = "column"
       query = query.youtube_channel_yearly_earnings_distribution
-      args  = [self.input.youtuber_id.value]
+      args  = [self.input.youtube_id.value]
     }
   }
 

@@ -1,4 +1,4 @@
-dashboard "youtube_statistics_dashboard" {
+dashboard "youtube" {
 
   title         = "YouTube Channel Dashboard"
   documentation = file("./docs/youtube_dashboard.md")
@@ -7,25 +7,25 @@ dashboard "youtube_statistics_dashboard" {
     title = "Overview"
 
     card {
-      query = query.youtube_total_channels
+      query = query.youtube_channel_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.youtube_total_uploads
+      query = query.youtube_channel_uploads_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.youtube_total_categories
+      query = query.youtube_channel_categories_count
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.youtube_total_countries
+      query = query.youtube_channel_countries_count
       width = 3
       type  = "info"
     }
@@ -37,7 +37,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "column"
       title = "Top 10 YouTube Channels by Subscribers"
-      query = query.youtube_top_10_channels_by_subscribers
+      query = query.youtube_channel_top_10_by_subscribers
       width = 6
       series "subscribers" {
         title = "Number of Subscribers"
@@ -48,7 +48,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type     = "column"
       title    = "Top 10 YouTube Channels: Video View vs Uploads"
-      query    = query.youtube_video_view_vs_uploads
+      query    = query.youtube_channel_video_view_vs_uploads
       width    = 6
       grouping = "compare"
       legend {
@@ -74,14 +74,14 @@ dashboard "youtube_statistics_dashboard" {
       type     = "column"
       grouping = "compare"
       title    = "Subscriber vs Video View by Category"
-      query    = query.youtube_subscriber_vs_video_view_by_category
+      query    = query.youtube_channel_subscriber_vs_video_view_by_category
       width    = 6
     }
 
     chart {
       type  = "pie"
       title = "Distribution of YouTube Channel Types"
-      query = query.youtube_distribution_of_channel_types
+      query = query.youtube_channel_distribution_type
       width = 6
     }
   }
@@ -92,14 +92,14 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "donut"
       title = "Distribution of YouTube Channels Based on country"
-      query = query.youtube_distribution_channels_by_country
+      query = query.youtube_channel_distribution_by_country
       width = 6
     }
 
     chart {
       type  = "column"
-      title = "Top 10 Youtubers Distribution of Earnings"
-      query = query.youtube_distribution_of_earnings
+      title = "Top 10 Youtube Channels Distribution of Earnings"
+      query = query.youtube_channel_distribution_earnings
       width = 6
     }
   }
@@ -110,7 +110,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "line"
       title = "Channels Subscriber Growth (Last 30 Days)"
-      query = query.youtube_channels_subscriber_growth_last_30_days
+      query = query.youtube_channel_subscriber_growth_last_30_days
       width = 6
       series "Subscriber Growth (Last 30 Days)"{
         title = "Subscriber Growth (Last 30 Days)"
@@ -121,7 +121,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "line"
       title = "Channels View Growth (Last 30 Days)"
-      query = query.youtube_channels_view_growth_last_30_days
+      query = query.youtube_channel_view_growth_last_30_days
       width = 6
       series "View Growth (Last 30 Days)"{
         title = "View Growth (Last 30 Days)"
@@ -133,7 +133,7 @@ dashboard "youtube_statistics_dashboard" {
 
 # Card Queries
 
-query "total_channels" {
+query "youtube_channel_count" {
   sql = <<-EOQ
     select
       count(*) as "Total Channels"
@@ -142,7 +142,7 @@ query "total_channels" {
   EOQ
 }
 
-query "total_uploads" {
+query "youtube_channel_uploads_count" {
   sql = <<-EOQ
     select
       sum(uploads) as "Total Uploads"
@@ -151,7 +151,7 @@ query "total_uploads" {
   EOQ
 }
 
-query "total_categories" {
+query "youtube_channel_categories_count" {
   sql = <<-EOQ
     select
       count(distinct category) as "Total Categories"
@@ -160,7 +160,7 @@ query "total_categories" {
   EOQ
 }
 
-query "total_countries" {
+query "youtube_channel_countries_count" {
   sql = <<-EOQ
     select
       count(distinct country) as "Total Countries"
@@ -171,7 +171,7 @@ query "total_countries" {
 
 # Chart Queries
 
-query "top_10_channels_by_subscribers" {
+query "youtube_channel_top_10_by_subscribers" {
   sql = <<-EOQ
     select
       youtuber,
@@ -184,7 +184,7 @@ query "top_10_channels_by_subscribers" {
   EOQ
 }
 
-query "video_view_vs_uploads" {
+query "youtube_channel_video_view_vs_uploads" {
   sql = <<-EOQ
     select
       youtuber,
@@ -198,7 +198,7 @@ query "video_view_vs_uploads" {
   EOQ
 }
 
-query "subscriber_vs_video_view_by_category" {
+query "youtube_channel_subscriber_vs_video_view_by_category" {
   sql = <<-EOQ
     select
       category,
@@ -213,7 +213,7 @@ query "subscriber_vs_video_view_by_category" {
   EOQ
 }
 
-query "distribution_of_channel_types" {
+query "youtube_channel_distribution_type" {
   sql = <<-EOQ
     select
       channel_type,
@@ -227,7 +227,7 @@ query "distribution_of_channel_types" {
   EOQ
 }
 
-query "distribution_channels_by_country" {
+query "youtube_channel_distribution_by_country" {
   sql = <<-EOQ
     select
       country,
@@ -241,7 +241,7 @@ query "distribution_channels_by_country" {
   EOQ
 }
 
-query "distribution_of_earnings" {
+query "youtube_channel_distribution_earnings" {
   sql = <<-EOQ
     select
       youtuber,
@@ -255,7 +255,7 @@ query "distribution_of_earnings" {
   EOQ
 }
 
-query "channels_subscriber_growth_last_30_days" {
+query "youtube_channel_subscriber_growth_last_30_days" {
   sql = <<-EOQ
     select
       youtuber,
@@ -267,7 +267,7 @@ query "channels_subscriber_growth_last_30_days" {
   EOQ
 }
 
-query "channels_view_growth_last_30_days" {
+query "youtube_channel_view_growth_last_30_days" {
   sql = <<-EOQ
     select
       youtuber,
