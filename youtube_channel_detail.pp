@@ -1,5 +1,7 @@
 dashboard "youtube_statistics_detail" {
-  title = "YouTube Channel Detail"
+
+  title         = "YouTube Channel Detail"
+  documentation = file("./docs/youtube_channel_detail.md")
 
   input "youtuber_id" {
     title = "Select a Channel:"

@@ -1,29 +1,31 @@
 dashboard "youtube_statistics_dashboard" {
-  title = "YouTube Channel Statistics Dashboard"
+
+  title         = "YouTube Channel Dashboard"
+  documentation = file("./docs/youtube_dashboard.md")
 
   container {
     title = "Overview"
 
     card {
-      query = query.total_channels
+      query = query.youtube_total_channels
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_uploads
+      query = query.youtube_total_uploads
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_categories
+      query = query.youtube_total_categories
       width = 3
       type  = "info"
     }
 
     card {
-      query = query.total_countries
+      query = query.youtube_total_countries
       width = 3
       type  = "info"
     }
@@ -35,7 +37,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "column"
       title = "Top 10 YouTube Channels by Subscribers"
-      query = query.top_10_channels_by_subscribers
+      query = query.youtube_top_10_channels_by_subscribers
       width = 6
       series "subscribers" {
         title = "Number of Subscribers"
@@ -46,7 +48,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type     = "column"
       title    = "Top 10 YouTube Channels: Video View vs Uploads"
-      query    = query.video_view_vs_uploads
+      query    = query.youtube_video_view_vs_uploads
       width    = 6
       grouping = "compare"
       legend {
@@ -72,14 +74,14 @@ dashboard "youtube_statistics_dashboard" {
       type     = "column"
       grouping = "compare"
       title    = "Subscriber vs Video View by Category"
-      query    = query.subscriber_vs_video_view_by_category
+      query    = query.youtube_subscriber_vs_video_view_by_category
       width    = 6
     }
 
     chart {
       type  = "pie"
       title = "Distribution of YouTube Channel Types"
-      query = query.distribution_of_channel_types
+      query = query.youtube_distribution_of_channel_types
       width = 6
     }
   }
@@ -90,14 +92,14 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "donut"
       title = "Distribution of YouTube Channels Based on country"
-      query = query.distribution_channels_by_country
+      query = query.youtube_distribution_channels_by_country
       width = 6
     }
 
     chart {
       type  = "column"
       title = "Top 10 Youtubers Distribution of Earnings"
-      query = query.distribution_of_earnings
+      query = query.youtube_distribution_of_earnings
       width = 6
     }
   }
@@ -108,7 +110,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "line"
       title = "Channels Subscriber Growth (Last 30 Days)"
-      query = query.channels_subscriber_growth_last_30_days
+      query = query.youtube_channels_subscriber_growth_last_30_days
       width = 6
       series "Subscriber Growth (Last 30 Days)"{
         title = "Subscriber Growth (Last 30 Days)"
@@ -119,7 +121,7 @@ dashboard "youtube_statistics_dashboard" {
     chart {
       type  = "line"
       title = "Channels View Growth (Last 30 Days)"
-      query = query.channels_view_growth_last_30_days
+      query = query.youtube_channels_view_growth_last_30_days
       width = 6
       series "View Growth (Last 30 Days)"{
         title = "View Growth (Last 30 Days)"
