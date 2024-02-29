@@ -1,11 +1,11 @@
-dashboard "youtube_statistics_detail" {
+dashboard "youtube_channel_detail" {
 
   title         = "YouTube Channel Detail"
   documentation = file("./docs/youtube_channel_detail.md")
 
   input "youtube_id" {
     title = "Select a Channel:"
-    query = query.youtube_statistics_input
+    query = query.youtube_channel_input
     width = 4
   }
 
@@ -87,7 +87,7 @@ dashboard "youtube_statistics_detail" {
 
 # Input query
 
-query "youtube_statistics_input" {
+query "youtube_channel_input" {
   sql = <<-EOQ
     select
       youtuber as label,

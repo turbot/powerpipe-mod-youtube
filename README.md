@@ -1,14 +1,28 @@
-# Youtube Mod for Powerpipe
+# YouTube Mod for Powerpipe
 
 Analyze youtube channel statistics data using PostgreSQL and Powerpipe.
 
-![youtuber-analysis-dashboard-image](https://github.com/turbot/powerpipe-mod-youtube/assets/78197905/98553c5b-b9da-4b51-9142-174363bad15d)
+![image](https://github.com/turbot/powerpipe-mod-youtube/assets/78197905/98553c5b-b9da-4b51-9142-174363bad15d)
+
+## Overview
+
+Dashboards can help answer questions like:
+
+- How many YouTube channels are present in the database?
+- How many YouTube channels exist?
+- What are the top 10 YouTube channels?
+- What are the different categories of the YouTube channels?
+- How many new subscribers have joined the channel over the last 30 days?
+
+## Documentation
+
+- **[Dashboards →](https://hub.powerpipe.io/mods/turbot/youtube/dashboards)**
 
 ## Getting Started
 
 ### Installation
 
-Download and install Powerpipe (https://powerpipe.io/downloads) and PostgreSQL (https://www.postgresql.org/download/). Or use Brew:
+Download and install [Powerpipe](https://powerpipe.io/downloads) and [PostgreSQL](https://www.postgresql.org/download/). Or use Brew:
 
 ```sh
 brew install turbot/tap/powerpipe
@@ -18,15 +32,11 @@ brew install turbot/tap/postgresql
 Clone:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-youtuber.git
-cd powerpipe-mod-youtuber
+git clone https://github.com/turbot/powerpipe-mod-youtube.git
+cd powerpipe-mod-youtube
 ```
 
-### Setup Data
-
-Download the dataset:
-
-- Download the [Global YouTube Statistics dataset](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics) (requires signup with [Kaggle](https://www.kaggle.com/))
+Download the [Global YouTube Statistics dataset](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics) (requires signup with [Kaggle](https://www.kaggle.com/))
   
 Create a PostgreSQL database:
 
@@ -104,4 +114,4 @@ This repository is published under the [Apache 2.0 license](https://www.apache.o
 Want to help but not sure where to start? Pick up one of the `help wanted` issues:
 
 - [Powerpipe](https://github.com/turbot/powerpipe/labels/help%20wanted)
-- [Youtube Statistic Mod](https://github.com/turbot/powerpipe-mod-youtuber/labels/help%20wanted)
+- [YouTube Mod](https://github.com/turbot/powerpipe-mod-youtuber/labels/help%20wanted)

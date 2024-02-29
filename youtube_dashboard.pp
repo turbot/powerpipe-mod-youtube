@@ -98,7 +98,7 @@ dashboard "youtube" {
 
     chart {
       type  = "column"
-      title = "Top 10 Youtube Channels Distribution of Earnings"
+      title = "Top 10 YouTube Channels distribution of earnings"
       query = query.youtube_channel_distribution_earnings
       width = 6
     }
@@ -109,7 +109,7 @@ dashboard "youtube" {
 
     chart {
       type  = "line"
-      title = "Channels Subscriber Growth (Last 30 Days)"
+      title = "Channel Subscriber Growth (Last 30 Days)"
       query = query.youtube_channel_subscriber_growth_last_30_days
       width = 6
       series "Subscriber Growth (Last 30 Days)"{
@@ -120,7 +120,7 @@ dashboard "youtube" {
 
     chart {
       type  = "line"
-      title = "Channels View Growth (Last 30 Days)"
+      title = "Channel View Growth (Last 30 Days)"
       query = query.youtube_channel_view_growth_last_30_days
       width = 6
       series "View Growth (Last 30 Days)"{
