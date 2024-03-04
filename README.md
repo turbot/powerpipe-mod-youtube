@@ -2,7 +2,7 @@
 
 Analyze youtube channel statistics data using PostgreSQL and Powerpipe.
 
-![image](https://github.com/turbot/powerpipe-mod-youtube/assets/78197905/98553c5b-b9da-4b51-9142-174363bad15d)
+![image](https://github.com/turbot/powerpipe-mod-youtube/blob/youtuber/docs/youtube_channel_dashboard_screenshot.png)
 
 ## Overview
 
