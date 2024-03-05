@@ -102,13 +102,15 @@ Load the dataset into the table:
 from 'Global YouTube Statistics.csv' DELIMITER ',' CSV HEADER ENCODING 'ISO-8859-1';
 ```
 
-## Usage
+### Browsing Dashboards
 
-Run the dashboard and specify the DB connection string:
+Start the dashboard server with the DB connection string:
 
 ```sh
 powerpipe server --database postgres://<username>@localhost:5432/youtube
 ```
+
+Browse and view your dashboards at **https://localhost:9033**.
 
 ## Open Source & Contributing
 
