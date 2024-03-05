@@ -29,11 +29,13 @@ brew install turbot/tap/powerpipe
 brew install turbot/tap/postgresql
 ```
 
-Clone:
+Install the mod:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-youtube.git
-cd powerpipe-mod-youtube
+mkdir dashboards
+cd dashboards
+powerpipe mod init
+powerpipe mod install github.com/turbot/powerpipe-mod-youtube
 ```
 
 ### Configure Database
