@@ -42,7 +42,7 @@ powerpipe mod install github.com/turbot/powerpipe-mod-youtube
 
 Download [Global YouTube Statistics.csv](https://www.kaggle.com/code/nelgiriyewithana/an-introduction-to-the-global-youtube-statistics/input)
 
-Move the downloaded file into the current directory:
+Move the downloaded file into the dashboards directory:
 
 ```sh
 mv ~/Downloads/Global YouTube Statistics.csv .
