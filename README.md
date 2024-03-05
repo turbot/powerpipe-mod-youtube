@@ -1,6 +1,6 @@
 # YouTube Mod for Powerpipe
 
-Analyze youtube channel statistics data using [PostgreSQL](https://www.postgresql.org/) and [Powerpipe](https://powerpipe.io).
+Analyze [Youtube](https://www.youtube.com/) channel statistics data using [PostgreSQL](https://www.postgresql.org/) and [Powerpipe](https://powerpipe.io).
 
 ![image](https://github.com/turbot/powerpipe-mod-youtube/blob/youtuber/docs/youtube_channel_dashboard_screenshot.png)
 
