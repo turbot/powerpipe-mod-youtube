@@ -3,5 +3,5 @@
 _What's new?_
 
 - New dashboard:
-  - YouTube Channel Dashboard. ([#1](https://github.com/turbot/powerpipe-mod-youtube/pull/1))
-  - YouTube Channel Detail. ([#1](https://github.com/turbot/powerpipe-mod-youtube/pull/1))
+  - [YouTube Channel Dashboard](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-youtube/dashboard.youtube)
+  - [YouTube Channel Detail](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-youtube/dashboard.youtube_channel_detail)
