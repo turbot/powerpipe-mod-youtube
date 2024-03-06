@@ -1,8 +1,8 @@
-# YouTube Mod for Powerpipe
+# YouTube Mod
 
 View dashboards to analyze [Youtube](https://www.youtube.com/) channel performance, viewer trends, and geographic insights, and more.
 
-![image](https://raw.githubusercontent.com/turbot/powerpipe-mod-youtube/main/docs/youtube_channel_dashboard_screenshot.png)
+<img src="https://raw.githubusercontent.com/turbot/powerpipe-mod-youtube/main/docs/youtube_channel_dashboard_screenshot.png" width="50%" type="thumbnail"/>
 
 ## Overview
 
