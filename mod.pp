@@ -1,6 +1,6 @@
 mod "youtube" {
   title         = "YouTube"
-  description   = "Explore comprehensive insights into YouTube channel performance, including subscriber growth, video engagement, and earnings analysis, through interactive visualizations crafted with PostgreSQL queries via Powerpipe."
+  description   = "Explore comprehensive insights into YouTube channel performance, including subscriber growth, video engagement, and earnings analysis, through interactive visualizations crafted with Powerpipe queries via PostgreSQL."
   color         = "#FF0000"
   documentation = file("./README.md")
   categories    = ["dashboard", "postgres"]
@@ -8,6 +8,6 @@ mod "youtube" {
 
 opengraph {
   title       = "Powerpipe Mod for YouTube"
-  description = "Explore comprehensive insights into YouTube channel performance, including subscriber growth, video engagement, and earnings analysis, through interactive visualizations crafted with PostgreSQL queries via Powerpipe."
+  description = "Explore comprehensive insights into YouTube channel performance, including subscriber growth, video engagement, and earnings analysis, through interactive visualizations crafted with Powerpipe queries via PostgreSQL."
   image       = "/images/mods/turbot/youtube-social-graphic.png"
 }
