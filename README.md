@@ -55,6 +55,7 @@ psql -U <username> -d postgres
 ```
 
 Create and connect to a database:
+
 ```sh
 create database youtube;
 \c youtube
@@ -110,7 +111,7 @@ Start the dashboard server with the DB connection string:
 powerpipe server --database postgres://<username>@localhost:5432/youtube
 ```
 
-Browse and view your dashboards at **https://localhost:9033**.
+Browse and view your dashboards at **http://localhost:9033**.
 
 ## Open Source & Contributing
 
